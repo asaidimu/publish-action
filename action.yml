@@ -1,0 +1,11 @@
+name: publish
+description: Create and release a pdf document written in html.
+
+inputs:
+  gh_token:
+    description: "authentication for gh"
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile

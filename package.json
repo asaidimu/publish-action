@@ -1,0 +1,42 @@
+{
+  "name": "publish",
+  "version": "1.0.0",
+  "description": "convert html to pdf and release it on github",
+  "main": "index.js",
+  "author": "augustine saidimu <47994458+augustinesaidimu@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "ci": "yarn install --frozen-lockfile"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.2",
+    "prettier": "^2.4.1",
+    "semantic-release": "^18.0.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md"
+          ]
+        }
+      ]
+    ]
+  }
+}
